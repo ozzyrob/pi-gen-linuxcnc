@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=linuxcnc
+Description=Linuxcnc Splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/linuxcnc
+ScriptFile=/usr/share/plymouth/themes/linuxcnc/linuxcnc.script

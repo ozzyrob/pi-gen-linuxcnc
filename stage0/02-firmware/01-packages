@@ -1,6 +1,7 @@
 initramfs-tools
 raspi-firmware
+linux-headers-6.12.34+rpt-rpi-v8-rt
+linux-image-6.12.34+rpt-rpi-v8-rt
+linux-headers-6.12.34+rpt-common-rpi
 linux-image-rpi-v8
-linux-image-rpi-2712
 linux-headers-rpi-v8
-linux-headers-rpi-2712

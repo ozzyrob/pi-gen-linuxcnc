@@ -1,0 +1,3 @@
+
+
+export LINUXCNC_FORCE_REALTIME=1
