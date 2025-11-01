@@ -179,7 +179,7 @@ export PI_GEN_RELEASE=${PI_GEN_RELEASE:-Raspberry Pi reference}
 
 export ARCH=arm64
 export RELEASE=${RELEASE:-trixie} # Don't forget to update stage0/prerun.sh
-export IMG_NAME="${IMG_NAME:-raspios-$RELEASE-$ARCH}"
+export IMG_NAME="${IMG_NAME:-raspios-lcnc-2.9.7-2-$RELEASE-$ARCH}"
 
 export USE_QEMU="${USE_QEMU:-0}"
 export IMG_DATE="${IMG_DATE:-"$(date +%Y-%m-%d)"}"
@@ -211,7 +211,7 @@ export WPA_COUNTRY
 export ENABLE_SSH="${ENABLE_SSH:-0}"
 export PUBKEY_ONLY_SSH="${PUBKEY_ONLY_SSH:-0}"
 
-export LOCALE_DEFAULT="${LOCALE_DEFAULT:-en_AU.UTF-8}"
+export LOCALE_DEFAULT="${LOCALE_DEFAULT:-en_GB.UTF-8}"
 
 export KEYBOARD_KEYMAP="${KEYBOARD_KEYMAP:-gb}"
 export KEYBOARD_LAYOUT="${KEYBOARD_LAYOUT:-English (UK)}"
