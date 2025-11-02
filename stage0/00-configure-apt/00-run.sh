@@ -4,6 +4,8 @@ true > "${ROOTFS_DIR}/etc/apt/sources.list"
 install -m 644 files/debian.sources "${ROOTFS_DIR}/etc/apt/sources.list.d/"
 install -m 644 files/raspi.sources "${ROOTFS_DIR}/etc/apt/sources.list.d/"
 install -m 644 files/linuxcnc.sources "${ROOTFS_DIR}/etc/apt/sources.list.d/"
+install -m 644 files/ethercat.sources "${ROOTFS_DIR}/etc/apt/sources.list.d/"
+
 sed -i "s/RELEASE/${RELEASE}/g" "${ROOTFS_DIR}/etc/apt/sources.list.d/debian.sources"
 sed -i "s/RELEASE/${RELEASE}/g" "${ROOTFS_DIR}/etc/apt/sources.list.d/raspi.sources"
 sed -i "s/RELEASE/${RELEASE}/g" "${ROOTFS_DIR}/etc/apt/sources.list.d/linuxcnc.sources"
@@ -24,6 +26,8 @@ fi
 
 install -m 644 files/raspberrypi-archive-keyring.pgp "${ROOTFS_DIR}/usr/share/keyrings/"
 install -m 644 files/linuxcnc-keyring.pgp "${ROOTFS_DIR}/usr/share/keyrings/"
+install -m 644 files/science_EtherLab.gpg "${ROOTFS_DIR}/usr/share/keyrings/"
+
 on_chroot <<- \EOF
 	ARCH="$(dpkg --print-architecture)"
 	if [ "$ARCH" = "armhf" ]; then
