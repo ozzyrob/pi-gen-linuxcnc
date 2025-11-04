@@ -16,3 +16,7 @@ install -m 644 files/profile/enable-rt.sh "${ROOTFS_DIR}/etc/profile.d/enable-li
 install -m 644 files/image/xfce-x.svg "${ROOTFS_DIR}/usr/share/backgrounds/xfce/xfce-x.svg"
 
 
+on_chroot << EOF
+apt -y remove modemmanager sane-airscan sane-utils usb-modeswitch usb-modeswitch-data wf-panel-pi wayvnc rpi-usb-gadget ppp
+apt -y autoremove
+EOF
