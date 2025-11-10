@@ -1,0 +1,49 @@
+#! /bin/bash
+
+update_lcnc_apps(){
+
+echo "Processing triggers for Linuxcnc Appilcation Menus"
+
+for DESKTOP in $(grep -l 'X-CNC;' /usr/share/applications/*.desktop); do
+#echo $DESKTOP
+sudo desktop-file-edit --set-key=Categories --set-value=X-CNC ${DESKTOP}
+done
+
+}
+update_lcnc_docs(){
+
+echo "Processing triggers for Linuxcnc Documentation  Menus"
+
+for DESKTOP in $(grep -l 'X-CNC-DOC;' /usr/share/applications/*.desktop); do
+#echo $DESKTOP
+sudo desktop-file-edit --set-key=Categories --set-value=X-CNC-DOC ${DESKTOP}
+done
+
+}
+update_lcnc_refs(){
+
+echo "Processing triggers for Linuxcnc Referefence  Menus"
+
+for DESKTOP in $(grep -l 'X-CNC-REF;' /usr/share/applications/*.desktop); do
+#echo $DESKTOP
+sudo desktop-file-edit --set-key=Categories --set-value=X-CNC-REF ${DESKTOP}
+done
+
+}
+
+# Save the original IFS to restore it later
+OLD_IFS=$IFS
+
+# Set IFS to newline
+IFS=$'\n'
+
+update_lcnc_apps
+update_lcnc_docs
+update_lcnc_refs
+
+# Restore the original IFS
+IFS=$OLD_IFS
+
+
+
+

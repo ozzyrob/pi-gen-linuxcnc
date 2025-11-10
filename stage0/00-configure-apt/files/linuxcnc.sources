@@ -1,5 +1,5 @@
 Types: deb
-URIs: https://www.linuxcnc.org
+URIs: http://www.linuxcnc.org
 Suites: RELEASE
 Components: base 2.9-uspace 2.9-rt
 Signed-By: /usr/share/keyrings/linuxcnc-keyring.pgp
