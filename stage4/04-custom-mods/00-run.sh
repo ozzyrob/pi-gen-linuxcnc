@@ -29,4 +29,5 @@ install -m 644 -o 1000 -g 1000 files/xml/xfce4-screensaver.xml "${ROOTFS_DIR}"/h
 on_chroot << EOF
 apt -y remove modemmanager sane-airscan sane-utils usb-modeswitch usb-modeswitch-data wf-panel-pi wayvnc rpi-usb-gadget ppp
 apt -y autoremove
+apt -y install piwiz
 EOF

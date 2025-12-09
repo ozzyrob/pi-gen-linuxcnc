@@ -30,6 +30,10 @@ sudo desktop-file-edit --set-key=Categories --set-value=X-CNC-REF ${DESKTOP}
 done
 
 }
+fix_splash(){
+    plymouth-set-default-theme -R linuxcnc
+
+}
 
 # Save the original IFS to restore it later
 OLD_IFS=$IFS
@@ -40,6 +44,7 @@ IFS=$'\n'
 update_lcnc_apps
 update_lcnc_docs
 update_lcnc_refs
+fix_splash
 
 # Restore the original IFS
 IFS=$OLD_IFS
