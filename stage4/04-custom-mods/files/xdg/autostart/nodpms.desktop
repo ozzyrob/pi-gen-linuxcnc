@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=xset -dpms
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=nodpms
+Name=nodpms
+Comment[en_US]=
+Comment=

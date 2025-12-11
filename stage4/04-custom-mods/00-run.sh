@@ -5,8 +5,8 @@
 install -m 644 files/xml/thunar.xml "${ROOTFS_DIR}/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/thunar.xml"
 install -m 644 files/xml/xfce4-terminal.xml "${ROOTFS_DIR}/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-terminal.xml"
 install -m 644 files/xml/displays.xml "${ROOTFS_DIR}/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/displays.xml"
-install -m 644 files/xml/xfce4-power-manager.xml "${ROOTFS_DIR}/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
-install -m 644 files/xml/xfce4-screensaver.xml "${ROOTFS_DIR}/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-sreensaver.xml"
+install -m 644 files/xdg/autostart/nodpms.desktop "${ROOTFS_DIR}/etc/xdg/autostart/nodpms.desktop"
+install -m 644 files/xdg/autostart/noscreenblank.desktop "${ROOTFS_DIR}/etc/xdg/autostart/noscreenblank.desktop"
 
 
 install -m 644 files/profile/enable-rt.sh "${ROOTFS_DIR}/etc/profile.d/enable-linuxcnc-rt.sh"
@@ -19,12 +19,15 @@ install -m 644 files/image/wallpaper-lcnc.jpg "${ROOTFS_DIR}/usr/share/desktop-b
 install -m 644 files/image/xfce-x.svg "${ROOTFS_DIR}/usr/share/backgrounds/xfce/xfce-x.svg"
 
 install -d -m 755 -o 1000 -g 1000 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config"
+install -d -m 755 -o 1000 -g 1000 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config/autostart"
 install -d -m 755 -o 1000 -g 1000 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config/xfce4"
 install -d -m 755 -o 1000 -g 1000 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config/xfce4/xfconf"
 install -d -m 755 -o 1000 -g 1000 "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
-install -m 644 -o 1000 -g 1000 files/xml/xfce4-power-manager.xml "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
-install -m 644 -o 1000 -g 1000 files/xml/xfce4-screensaver.xml "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-screensaver.xml"
+install -m 644 -o 1000 -g 1000 files/.config/autostart//xfce4-power-manager.desktop "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config/autostart/xfce4-power-manager.desktop"
+install -m 644 -o 1000 -g 1000 files/.config/autostart/xfce4-screensaver.desktop "${ROOTFS_DIR}"/home/"${FIRST_USER_NAME}/.config/autostart/xfce4-screensaver.desktop"
+
+
 
 on_chroot << EOF
 apt -y remove modemmanager sane-airscan sane-utils usb-modeswitch usb-modeswitch-data wf-panel-pi wayvnc rpi-usb-gadget ppp
